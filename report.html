@@ -1,0 +1,52 @@
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/jquery.fullPage.css" />
+		<link rel="stylesheet" type="text/css" href="css/examples.css" />
+	</head>
+
+	<body>
+
+		<div id="fullpage">
+			<div class="section">
+				<div class="page" id="page1">1</div>
+			</div>
+			<div class="section">
+				<div class="page" id="page2">2</div>
+			</div>
+			<div class="section">
+				<div class="page" id="page3">3</div>
+			</div>
+		</div>
+
+		<script src="js/vendor/jquery-2.1.0.js"></script>
+		<script src="js/vendor/jquery.easings.min.js"></script>
+		<script src="js/vendor/jquery.fullPage.js"></script>
+		<script>
+			$(document).ready(function() {				
+				
+				$('.page').on('onLoad',function(){
+					console.log('onLoad-' + $(this).attr('id'));
+				});
+				
+				$('.page').on('onLeave',function(){
+					console.log('onLeave-' + $(this).attr('id'));
+				});
+				
+				$('#fullpage').fullpage({
+					sectionsColor: ['#aaa', '#bbb', '#ccc'],
+					afterLoad: function(anchorLink, index) {
+						$('.page').eq(index - 1).trigger('onLoad');						
+					},					
+					onLeave: function(index, nextIndex, direction) {
+						$('.page').eq(index - 1).trigger('onLeave');						
+					}
+				});
+				
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,110 @@
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/jquery.fullPage.css" />
+		<link rel="stylesheet" type="text/css" href="css/examples.css" />
+	</head>
+
+	<body>
+
+		<div id="fullpage">
+			<div class="section" id="section0">
+				<p><img src="img/1.png" /></p>
+				<p>One section</p>
+			</div>
+			<div class="section" id="section1">
+				<p><img src="img/2.png" /></p>
+				<p>Two section</p>
+			</div>
+			<div class="section" id="section2">
+				<p class="intro"><img src="img/3.png" /></p>
+				<p>Three section</p>
+			</div>
+			<div class="section" id="section3">
+				<p><img src="img/4.png" /></p>
+				<p>Four section</p>
+			</div>
+			<div class="section" id="section4">
+				<p><img src="img/5.png" /></p>
+				<p>Last section</p>
+			</div>
+		</div>
+
+		<ul id="menu">
+			<li data-menuanchor="firstPage">
+				<a href="#firstPage">First slide</a>
+			</li>
+			<li data-menuanchor="secondPage">
+				<a href="#secondPage">Second slide</a>
+			</li>
+			<li data-menuanchor="3rdPage">
+				<a href="#3rdPage">Third slide</a>
+			</li>
+			<li data-menuanchor="4thpage">
+				<a href="#4thpage">Four slide</a>
+			</li>
+			<li data-menuanchor="lastPage">
+				<a href="#lastPage">lastPage</a>
+			</li>
+		</ul>
+
+		<script src="js/vendor/jquery-2.1.0.js"></script>
+		<script src="js/vendor/jquery.easings.min.js"></script>
+		<script src="js/vendor/jquery.fullPage.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('#fullpage').fullpage({
+					sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
+					anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+					menu: '#menu',
+					afterLoad: function(anchorLink, index) {
+
+						//section 1
+						if(index == 1) {
+							//moving the image
+							console.log(1)
+
+						}
+
+						//section 2
+						if(index == 2) {
+							//moving the image
+							console.log(2)
+
+						}
+						
+						//section 3
+						if(index == 3) {
+							//moving the image
+							console.log(3)
+
+						}
+						
+						//section 4
+						if(index == 4) {
+							//moving the image
+							console.log(4)
+
+						}
+						
+						//section 5
+						if(index == 5) {
+							//moving the image
+							console.log(5)
+
+						}
+
+						//section 3
+						//if(anchorLink == '6rdPage') {
+							//console.log(5)
+						//}
+					}
+				});
+
+			});
+		</script>
+	</body>
+
+</html>
